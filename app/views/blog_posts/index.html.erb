@@ -5,11 +5,14 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<%= x.title %>
+					<%= link_to x.title, x %>
 				</div>
 				<div class="panel-body">
 					by <%= x.author %><br>
-					<p> <%= x.blog_entry %> </p>
+					<p><i>Created: <%= blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %></i></p>
+					<p> <%= truncate x.blog_entry, length: 50 %> </p>
+					<p> <% if x.blog_entry.size > 50 %><%= link_to "(Read More)", x %> </p>
+					<% end %>
 				</div>
 				<div class="panel-footer">
 					<%= link_to "Show", blog_post_path(x), class: "btn btn-info" %>
