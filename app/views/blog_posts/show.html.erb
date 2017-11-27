@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<%= @blog_post.title %>
+	</div>
+	<div class="panel-body">
+		<p><%= @blog_post.author %></p>
+		<p><%= @blog_post.blog_entry %></p>
+	</div>
+	<div class="panel-footer">
+		<%= link_to "Edit", edit_blog_post_path(@blog_post), class: "btn btn-warning" %>
+		<%= link_to "All Blog Posts", blog_posts_path, class: "btn btn-default" %>
+	</div>
+</div>
